@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script>
+    const root = document.getElementById("root");
+    const span = React.createElement(
+      "h3",
+      {
+        onMouseEnter: () => console.log("mouse enter"),
+      },
+      "Hello I'm a span"
+    );
+    const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("im clicked"),
+      },
+      "Click me"
+    );
+    const container = React.createElement("div", null, [span, btn]);
+    ReactDOM.render(container, root);
+  </script>
+</html>
+<!--https://nomadcoders.co/react-for-beginners/lectures/3261-->
+<!--
+* 핵심 : 
+html 방식 => element 요소를 만들어놓고 데이터 및 element를 수정하는 방식
+React 방식 => script를 통해 사용자에게 보여줄  element 요소 및 데이터를 핸들링 후 반영
+서로 반대의 flow를 가진다.      
+
+function greet(name) {  // 여기서 'name'은 파라미터 (parameter)
+    console.log("Hello, " + name);
+}
+
+greet("Alice");  // 여기서 'Alice'는 아규먼트 (argument)
+  
+
+-->
